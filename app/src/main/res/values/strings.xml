@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Quizzy</string>
+    <string name="app_name_upper">QUIZZY</string>
+    <string name="textfield_label">Username</string>
+    <string name="demo_card_text">Simple Catd</string>
+    <string name="hint_username">Username or Email</string>
+    <string name="hint_password">Password</string>
+    <string name="txt_signin_button">Sign In</string>
+    <string name="text_donthaveanaccount">Do not have an account?</string>
+    <string name="text_signup">Sign Up</string>
+</resources>

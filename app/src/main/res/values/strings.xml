@@ -8,4 +8,11 @@
     <string name="txt_signin_button">Sign In</string>
     <string name="text_donthaveanaccount">Do not have an account?</string>
     <string name="text_signup">Sign Up</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="text_fill_info">Please fill the information</string>
+    <string name="hint_signup_username">Enter your username</string>
+    <string name="hint_signup_password">Enter your password</string>
+    <string name="hint_signup_password_confirm">Password confirm</string>
+    <string name="hint_signup_mail">Enter your e-mail address</string>
+    <string name="text_sign_me_up">sign me up</string>
 </resources>

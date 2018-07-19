@@ -79,7 +79,7 @@
         app:srcCompat="@drawable/baseline_lock_white_24" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_password"
+        android:id="@+id/til_signup_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -103,16 +103,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/material_button"
+        android:id="@+id/b_signin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/txt_signin_button"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/iv_password"
-        app:layout_constraintTop_toBottomOf="@+id/til_password" />
+        app:layout_constraintTop_toBottomOf="@+id/til_signup_password" />
 
     <LinearLayout
         android:id="@+id/ll_signup"
@@ -125,21 +127,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
         <TextView
+            android:id="@+id/tv_donthaveacc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="sans-serif-light"
-            android:textSize="14sp"
+            android:text="@string/text_donthaveanaccount"
             android:textColor="@color/colorText"
-            android:text="@string/text_donthaveanaccount"/>
+            android:textSize="14sp" />
+
         <TextView
+            android:id="@+id/tv_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textSize="18sp"
+            android:onClick="NavToSignUp"
+            android:text="@string/text_signup"
             android:textColor="@color/colorText"
-            android:text="@string/text_signup"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

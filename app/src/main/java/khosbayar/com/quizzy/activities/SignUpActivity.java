@@ -1,7 +1,9 @@
-package khosbayar.com.quizzy;
+package khosbayar.com.quizzy.activities;
 
 import android.os.Bundle;
 import android.app.Activity;
+
+import khosbayar.com.quizzy.R;
 
 public class SignUpActivity extends Activity {
 

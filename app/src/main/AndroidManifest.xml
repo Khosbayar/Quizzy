@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,13 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activities.SignInActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="khosbayar.com.quizzy.MainActivity" />
+                android:value="khosbayar.com.quizzy.activities.SignInActivity" />
         </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/title_activity_main" />
     </application>
 
 </manifest>

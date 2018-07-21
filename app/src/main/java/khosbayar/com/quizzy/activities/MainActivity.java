@@ -1,6 +1,5 @@
 package khosbayar.com.quizzy.activities;
 
-import android.support..widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -11,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import khosbayar.com.quizzy.R;
 
 public class MainActivity extends AppCompatActivity {

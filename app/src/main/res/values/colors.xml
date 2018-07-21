@@ -8,4 +8,5 @@
     <color name="colorAccentLight">#72FF87</color>
     <color name="colorText">#F7F7F7</color>
     <color name="colorHint">#bfbfbf</color>
+    <color name="colorCardBackground">#80424242</color>
 </resources>

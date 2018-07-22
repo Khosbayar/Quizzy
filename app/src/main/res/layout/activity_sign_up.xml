@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/text_fill_info" />
+        android:text="@string/text_fill_info" />
 
     <ImageView
         android:id="@+id/iv_username"
@@ -32,7 +32,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_fill_info"
-        app:srcCompat="@drawable/baseline_person_white_24" />
+        android:src="@drawable/baseline_person_white_18"
+         />
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_username"
@@ -64,7 +67,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/iv_username"
         app:layout_constraintTop_toBottomOf="@+id/iv_username"
-        app:srcCompat="@drawable/baseline_mail_white_24" />
+        android:src="@drawable/baseline_mail_white_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_mail"
@@ -97,11 +100,11 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/iv_mail"
         app:layout_constraintTop_toBottomOf="@+id/iv_mail"
-        app:srcCompat="@drawable/baseline_lock_white_24" />
+        android:src="@drawable/baseline_lock_white_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_password"
-        android:layout_width="324dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -130,11 +133,11 @@
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@+id/iv_password"
         app:layout_constraintTop_toBottomOf="@+id/iv_password"
-        app:srcCompat="@drawable/baseline_lock_white_24" />
+        android:src="@drawable/baseline_lock_white_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_signup_password_confirm"
-        android:layout_width="324dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"

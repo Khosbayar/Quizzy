@@ -27,5 +27,11 @@
     <string name="unelevated_button_label_enabled">go there</string>
     <string name="unelevated_button_label_enabled2">leave group</string>
     <string name="text_create_group">create group</string>
+    <string name="text_step1">Step 1. Choose your group name</string>
+    <string name="hint_group_name">Choose your group name</string>
+    <string name="hint_add_member">Enter member\'s username</string>
+    <string name="text_step2">Step 2. Add members</string>
+    <string name="text_add">Add</string>
+    <string name="text_step3">Step 3. Confirm information</string>
 
 </resources>

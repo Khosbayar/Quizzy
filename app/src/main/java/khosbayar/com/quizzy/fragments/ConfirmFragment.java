@@ -17,19 +17,16 @@ public class ConfirmFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_confirm, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragThird);
-        tv.setText(getArguments().getString("msg"));
-
         return v;
     }
 
     public static ConfirmFragment newInstance(String text) {
 
         ConfirmFragment f = new ConfirmFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-
-        f.setArguments(b);
+//        Bundle b = new Bundle();
+//        b.putString("msg", text);
+//
+//        f.setArguments(b);
 
         return f;
     }

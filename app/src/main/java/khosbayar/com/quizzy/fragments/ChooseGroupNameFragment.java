@@ -15,8 +15,7 @@ public class ChooseGroupNameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_choose_group_name, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragFirst);
-        tv.setText(getArguments().getString("msg"));
+
 
         return v;
     }
@@ -24,10 +23,10 @@ public class ChooseGroupNameFragment extends Fragment {
     public static ChooseGroupNameFragment newInstance(String text) {
 
         ChooseGroupNameFragment f = new ChooseGroupNameFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-
-        f.setArguments(b);
+//        Bundle b = new Bundle();
+//        b.putString("msg", text);
+//
+//        f.setArguments(b);
 
         return f;
     }

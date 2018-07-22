@@ -17,8 +17,6 @@ public class AddMembersFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_add_members, container, false);
 
-        TextView tv = (TextView) v.findViewById(R.id.tvFragSecond);
-        tv.setText(getArguments().getString("msg"));
 
         return v;
     }
@@ -26,10 +24,10 @@ public class AddMembersFragment extends Fragment {
     public static AddMembersFragment newInstance(String text) {
 
         AddMembersFragment f = new AddMembersFragment();
-        Bundle b = new Bundle();
-        b.putString("msg", text);
-
-        f.setArguments(b);
+//        Bundle b = new Bundle();
+//        b.putString("msg", text);
+//
+//        f.setArguments(b);
 
         return f;
     }

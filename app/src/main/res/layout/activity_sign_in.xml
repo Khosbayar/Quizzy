@@ -1,153 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    tools:context=".activities.SignInActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:id="@+id/ll_app_icon_text"
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="signInViewModel"
+            type="khosbayar.com.quizzy.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".activities.SignInActivity">
 
-        <TextView
-            android:id="@+id/tv_appname"
-            style="@style/TextAppearance.MaterialComponents.Headline2"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_app_icon_text"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/app_name_upper"
-            android:textColor="@color/colorText" />
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_appname"
+                style="@style/TextAppearance.MaterialComponents.Headline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_name_upper"
+                android:textColor="@color/colorText" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="145dp"
+                android:layout_height="182dp"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_app_logo" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{signInViewModel.progressBar}"/>
+        </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="145dp"
-            android:layout_height="182dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_app_logo" />
-    </LinearLayout>
+            android:id="@+id/iv_username"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_app_icon_text"
+            app:srcCompat="@drawable/baseline_person_white_24" />
 
-    <ImageView
-        android:id="@+id/iv_username"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_app_icon_text"
-        app:srcCompat="@drawable/baseline_person_white_24" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_username"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:textColor="@color/colorText"
-        android:textColorHint="@color/colorHint"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_username"
-        app:layout_constraintTop_toTopOf="@+id/iv_username">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_username"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_username"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_username"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColorHint="@color/colorHint"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_username"
+            app:layout_constraintTop_toTopOf="@+id/iv_username">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_username"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:text="@{signInViewModel.username}"/>
 
-    <ImageView
-        android:id="@+id/iv_password"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/iv_username"
-        app:layout_constraintTop_toBottomOf="@+id/iv_username"
-        app:srcCompat="@drawable/baseline_lock_white_24" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_signup_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:textColor="@color/colorText"
-        android:textColorHint="@color/colorHint"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/iv_password"
-        app:layout_constraintTop_toTopOf="@+id/iv_password">
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/iv_username"
+            app:layout_constraintTop_toBottomOf="@+id/iv_username"
+            app:srcCompat="@drawable/baseline_lock_white_24" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_signup_password"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:textColor="@color/colorText"
-            android:textColorHint="@color/colorHint" />
+            android:textColorHint="@color/colorHint"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_password"
+            app:layout_constraintTop_toTopOf="@+id/iv_password">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:text="@{signInViewModel.password}"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/b_signin"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txt_signin_button"
-        android:textAllCaps="true"
-        android:onClick="navToMainActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/iv_password"
-        app:layout_constraintTop_toBottomOf="@+id/til_signup_password" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_signin"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/txt_signin_button"
+            android:textAllCaps="true"
+            android:onClick="@{signInViewModel::onSignIn}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/iv_password"
+            app:layout_constraintTop_toBottomOf="@+id/til_signup_password" />
 
-        <TextView
-            android:id="@+id/tv_donthaveacc"
+        <LinearLayout
+            android:id="@+id/ll_signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="sans-serif-light"
-            android:text="@string/text_donthaveanaccount"
-            android:textColor="@color/colorText"
-            android:textSize="14sp" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tv_signup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="NavToSignUp"
-            android:text="@string/text_signup"
-            android:textColor="@color/colorText"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_donthaveacc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/text_donthaveanaccount"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="@{signInViewModel::onSignUp}"
+                android:text="@string/text_signup"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

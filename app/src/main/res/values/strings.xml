@@ -33,5 +33,6 @@
     <string name="text_step2">Step 2. Add members</string>
     <string name="text_add">Add</string>
     <string name="text_step3">Step 3. Confirm information</string>
-
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
 </resources>
